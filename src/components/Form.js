@@ -21,6 +21,8 @@ const Form = (props) => {
           value={props.values.name}
           name="name"
           onChange={handleChange}
+          type="text"
+          maxLength="30"
         />
       </label>
       <label>
@@ -30,16 +32,17 @@ const Form = (props) => {
           value={props.values.email}
           name="email"
           onChange={handleChange}
+          type="email"
         />
       </label>
       <label>
         Role
-        <input
-          placeholder="Role here"
-          value={props.values.role}
-          name="role"
-          onChange={handleChange}
-        />
+        <select value={props.values.role} name="role" onChange={handleChange}>
+          <option value="">---Select---</option>
+          <option value="Student">Student</option>
+          <option value="Instructor">Instructor</option>
+          <option value="Alumni">Alumni</option>
+        </select>
       </label>
       <input type="submit" value="Join our Team!" />
     </form>
